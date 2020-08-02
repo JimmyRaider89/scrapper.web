@@ -27,7 +27,6 @@ export default class App extends React.Component<any, ResultProps> {
     }
     catch(err){
       const response = err.response;
-
       if(response && response.status === 400)
       {
         const errors = [] as string[];
@@ -47,7 +46,7 @@ export default class App extends React.Component<any, ResultProps> {
     return (
       <div className="App">
         <div className="App-container">
-          <p>Search</p>
+          <h1>Search</h1>
           <Search Search={this.handleSubmit} />
           <Result status={this.state.status } ranking={this.state.ranking} errors={this.state.errors} />
         </div>

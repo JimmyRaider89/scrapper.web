@@ -15,7 +15,7 @@ export const Result: React.SFC<ResultProps> = ({status, ranking, errors}: Result
     }
     {
       status === LoadStatus.BadRequest &&
-        <div>
+        <div data-testid="result-validation">
           <p>Unable to search. Please fix the following errors:</p>
           <UnOrderdList items={errors}/>
         </div>
@@ -23,12 +23,12 @@ export const Result: React.SFC<ResultProps> = ({status, ranking, errors}: Result
     {
       status === LoadStatus.Error &&
         <div>
-          <p>Oh Snap!! Something serious went wrong. Please try again.</p>
+          <p role="alert">Oh Snap!! Something serious went wrong. Please try again.</p>
         </div>
     }
     {
       status === LoadStatus.Loaded && ranking &&
-        <div>
+        <div data-testid="result-loaded">
           <p>Results for key word search: &quot;{ ranking.keyWords }&quot; using search engine { mapEngine(ranking.searchEngine) }</p>
           {
             ranking.positions.length > 0 &&

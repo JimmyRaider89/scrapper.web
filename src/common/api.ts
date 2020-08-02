@@ -2,7 +2,7 @@ import axios from 'axios'
 import { SearchCriteria } from '../react-app-env';
 
 const instance = axios.create({
-  baseURL: 'http://localhost:32768',
+  baseURL: process.env.REACT_APP_API_URL,
   headers: {
     contentType: 'application/json',
   }
@@ -10,9 +10,5 @@ const instance = axios.create({
 
 export default { 
   search:  async (criteria: SearchCriteria): Promise<any> =>
-    await instance({
-      'method': 'POST',
-      'url':'/ranking',
-      'data': criteria
-    })
+    await instance.post('/ranking', criteria)
 }

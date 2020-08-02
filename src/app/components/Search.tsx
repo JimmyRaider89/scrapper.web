@@ -26,14 +26,14 @@ export class Search extends Component<SearchProps, SearchCriteria> {
 
   render(): JSX.Element { 
     return (
-      <div className="Search-bar">
+      <div className="Search-bar" data-testid="search-bar">
         <form onSubmit={this.handleSubmit}>
-          <input name="keywords" value={this.state.keywords} type="text" onChange={this.handleKeyWordChange} maxLength={200} />
+          <input name="keywords" value={this.state.keywords} type="text" onChange={this.handleKeyWordChange} maxLength={200} data-testid="search-keyword" />
           <select name="engine" onChange={this.handleSelectChange} defaultValue={this.state.engine}>
             <option value="1">Google</option>
             <option value="2">Bing</option>
           </select>
-          <input type="submit" value="Submit" />
+          <input type="submit" value="Submit" data-testid="search-submit" />
         </form>
       </div>
     );

@@ -25,6 +25,7 @@
     "msw": "^0.20.1"
   },
   "scripts": {
+    "start": "react-scripts start",
     "lint": "eslint . --ext .ts",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jest-environment-jsdom-sixteen",

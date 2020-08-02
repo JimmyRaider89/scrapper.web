@@ -10,7 +10,9 @@ In the project directory, you can run:
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Make sure you start [scrapper.api](https://github.com/JimmyRaider89/scrapper.api) to ise locally end to end.
+Make sure you start [scrapper.api](https://github.com/JimmyRaider89/scrapper.api) to use locally end to end.  
+
+If you are unable to connect to the api. Note down then port number of the api and update the .env file before starting the web app.
 
 ### `npm test`
 

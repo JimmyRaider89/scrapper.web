@@ -6,7 +6,7 @@ import UnOrderdList from './List'
 
 import './Result.css';
 
-export const Result: React.SFC<ResultProps> = ({status, ranking}: ResultProps): JSX.Element => 
+export const Result: React.SFC<ResultProps> = ({status, ranking, errors}: ResultProps): JSX.Element => 
   <div className={`${status !== LoadStatus.NotLoaded? 'result': ''}`}>
     {
       status === LoadStatus.Loading &&
@@ -14,9 +14,16 @@ export const Result: React.SFC<ResultProps> = ({status, ranking}: ResultProps): 
         </div>
     }
     {
+      status === LoadStatus.BadRequest &&
+        <div>
+          <p>Unable to search. Please fix the following errors</p>
+          <UnOrderdList items={errors}/>
+        </div>
+    }
+    {
       status === LoadStatus.Error &&
         <div>
-          <p>Oh Snap!! Something went wrong.  Please try again.</p>
+          <p>Oh Snap!! Something serious went wrong. Please try again.</p>
         </div>
     }
     {
@@ -29,7 +36,7 @@ export const Result: React.SFC<ResultProps> = ({status, ranking}: ResultProps): 
           }
           {
             ranking.positions.length === 0 &&
-            <p>Unfortunately the website did not rank with the key words.</p>
+            <p>Unfortunately the InfoTrack did not rank with the entered key words.</p>
           }
           
         </div>

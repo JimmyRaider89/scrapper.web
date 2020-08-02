@@ -28,7 +28,7 @@ export class Search extends Component<SearchProps, SearchCriteria> {
     return (
       <div className="Search-bar">
         <form onSubmit={this.handleSubmit}>
-          <input name="keywords" value={this.state.keywords} type="text" onChange={this.handleKeyWordChange} />
+          <input name="keywords" value={this.state.keywords} type="text" onChange={this.handleKeyWordChange} maxLength={200} />
           <select name="engine" onChange={this.handleSelectChange} defaultValue={this.state.engine}>
             <option value="1">Google</option>
             <option value="2">Bing</option>

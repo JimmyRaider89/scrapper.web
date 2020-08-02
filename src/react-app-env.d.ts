@@ -9,9 +9,10 @@ export type SearchCriteria = {
 export type ResultProps = {
   status: LoadStatus;
   ranking: Ranking | null;
+  errors: string[];
 }
 export type ListProps = {
-  items: number[];
+  items: any[];
 }
 
 export type SearchProps = {

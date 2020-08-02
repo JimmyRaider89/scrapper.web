@@ -16,7 +16,7 @@ export const Result: React.SFC<ResultProps> = ({status, ranking, errors}: Result
     {
       status === LoadStatus.BadRequest &&
         <div>
-          <p>Unable to search. Please fix the following errors</p>
+          <p>Unable to search. Please fix the following errors:</p>
           <UnOrderdList items={errors}/>
         </div>
     }

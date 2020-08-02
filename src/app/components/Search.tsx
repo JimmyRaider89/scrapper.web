@@ -5,7 +5,7 @@ import { SearchProps , SearchCriteria} from '../../react-app-env';
 export class Search extends Component<SearchProps, SearchCriteria> {
   constructor(props: SearchProps) {
     super(props); 
-    this.state = { keywords: 'online title search', engine: 2 };
+    this.state = { keywords: 'online title search', engine: 1 };
 
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleKeyWordChange = this.handleKeyWordChange.bind(this);
